@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Community Event Portal</title>
+</head>
+<body>
+  <header>
+    <h1>Local Community Event Portal</h1>
+  </header>
+
+  <main>
+    <!-- Add New Event Section -->
+    <section aria-labelledby="add-event-heading" class="add-event-section">
+      <h2 id="add-event-heading">Add New Event</h2>
+      <form id="addEventForm" class="event-form">
+        <input type="text" id="eventName" name="eventName" placeholder="Event Name" required />
+        <input type="date" id="eventDate" name="eventDate" required />
+        <input type="text" id="eventCategory" name="eventCategory" placeholder="Category" required />
+        <input type="number" id="eventSeats" name="eventSeats" placeholder="Available Seats" min="1" required />
+        <button type="submit">Add Event</button>
+      </form>
+    </section>
+
+    <!-- Event Filters -->
+    <section aria-labelledby="filters-heading" class="filters-section">
+      <h2 id="filters-heading">Filter Events</h2>
+      <div class="filter-controls">
+        <button type="button" id="filterMusic">Show Only Music Events</button>
+        <button type="button" id="showAll">Show All Events</button>
+
+        <label for="categoryFilter" class="visually-hidden">Filter by Category</label>
+        <select id="categoryFilter" name="categoryFilter">
+          <option value="">-- Filter by Category --</option>
+          <option value="Music">Music</option>
+          <option value="Health">Health</option>
+          <option value="Technology">Technology</option>
+          <option value="Art">Art</option>
+        </select>
+
+        <label for="searchInput" class="visually-hidden">Search Event by Name</label>
+        <input type="text" id="searchInput" name="searchInput" placeholder="Search event by name" />
+      </div>
+    </section>
+
+    <!-- Event Listings -->
+    <section aria-labelledby="all-events-heading" class="events-section">
+      <h2 id="all-events-heading">All Events</h2>
+      <div id="allEvents" class="event-container"></div>
+    </section>
+
+    <!-- Registered Events -->
+    <section aria-labelledby="my-events-heading" class="registered-events-section">
+      <h2 id="my-events-heading">My Registered Events</h2>
+      <ul id="myEventsList" class="registered-events-list"></ul>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

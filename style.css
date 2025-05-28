@@ -1,0 +1,121 @@
+:root {
+  --primary: #2a7f62;
+  --primary-dark: #1a5d41;
+  --accent: #c94f48;
+  --text: #2c3e50;
+  --bg: linear-gradient(135deg, #e6f0ea, #cde1d6);
+  --card-bg: #ffffffcc;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.event-form, .filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.event-form input, .event-form button,
+.filter-buttons button, .filter-buttons select, .filter-buttons input {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--primary);
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.event-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  background: #f0fff5;
+}
+
+.event-form button, .filter-buttons button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.event-form button:hover, .filter-buttons button:hover {
+  background: var(--primary-dark);
+}
+
+.event-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.event-card h3 {
+  color: var(--primary);
+  margin: 0;
+}
+
+.event-card p {
+  margin: 0;
+  color: #3b4a3c;
+}
+
+.event-card button {
+  padding: 8px 12px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.event-card button:first-of-type {
+  background: var(--primary);
+  color: #fff;
+}
+
+.event-card button:last-of-type {
+  background: var(--accent);
+  color: #fff;
+}
+
+.event-card button:hover {
+  opacity: 0.85;
+}
+
+#myEventsList {
+  max-width: 450px;
+  margin: 22px auto 0;
+  padding-left: 20px;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
